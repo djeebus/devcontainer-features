@@ -1,0 +1,19 @@
+{
+  "name": "Yarn - persistent cache",
+  "id": "yarn-persistent-cache",
+  "version": "1.0.0",
+  "description": "A feature that provides persistent cache for Yarn",
+  "containerEnv": {
+    "YARN_CACHE_FOLDER": "/mnt/yarn-persistent-cache"
+  },
+  "mounts": [
+    {
+      "source": "yarn-persistent-cache-${devcontainerId}",
+      "target": "/mnt/yarn-persistent-cache",
+      "type": "volume"
+    }
+  ],
+  "onCreateCommand": [
+    "/usr/local/share/github-djeebus/devcontainer-features/yarn-persistent-cache/onCreate.sh"
+  ]
+}
